@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:'Patrick Hand';
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    width: 22rem;
+    height: 20rem;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    margin-top: 5rem;
+}
+input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+button{
+    margin:0.25rem;
+    font-size: 1rem;
+    padding: 0.25rem;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: rgb(0, 183, 255);
+}
