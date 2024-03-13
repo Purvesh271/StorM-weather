@@ -77,6 +77,9 @@ p{
         align-items: center;
     }
     .box{
-        width: 80vw;
+        width: 90vw;
+    }
+    input{
+        width: 9rem;
     }
 }

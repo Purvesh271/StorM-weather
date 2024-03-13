@@ -21,20 +21,19 @@ app.get("/",async(req,res) =>{
 
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
-    let weather;
-    let error = null;
 try {
     const response = await axios.get(apiUrl);
     weather = response.data;
     console.log(weather);
-    res.render("home.ejs", {weather , error});
+    res.render("home.ejs", {weather , error:null});
+
     
 } catch (error) {
     weather = null;
     error = `Error! please try again`;
-    res.render("home.ejs", {weather , error});
-}
-
+    res.render("home.ejs", {weather , error:null});
+    
+}   
 
 });
 
