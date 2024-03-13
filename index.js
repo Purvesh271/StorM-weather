@@ -3,6 +3,8 @@ const app = express();
 
 const axios = require('axios');
 
+require("dotenv").config();
+
 const port = 8080;
 app.listen(port, () =>{
     console.log(`Listening on port ${port}`);
@@ -15,7 +17,7 @@ app.set("view engine","ejs");
 app.get("/",async(req,res) =>{
     
     const city = req.query.city;
-    const apiKey = "a2726ab10b70ce33fcff73c1e1592366";
+    const apiKey = `${process.env.apiKey}`;
 
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
@@ -24,14 +26,16 @@ app.get("/",async(req,res) =>{
 try {
     const response = await axios.get(apiUrl);
     weather = response.data;
-    console.log(weather)
+    console.log(weather);
+    res.render("home.ejs", {weather , error});
     
 } catch (error) {
     weather = null;
-    error = `Error! please try again`
+    error = `Error! please try again`;
+    res.render("home.ejs", {weather , error});
 }
 
-res.render("home.ejs", {weather , error});
+
 });
 
 
